@@ -22,6 +22,9 @@ flow:
     - copy_artifact:
         do:
           Integrations.demo.aos.sub_flows.remote_copy:
+            - hostname: '${hostname}'
+            - username: '${username}'
+            - password: '${password}'
             - url: '${artifact_url}'
         publish:
           - artifact_name: '${filename}'
@@ -31,6 +34,9 @@ flow:
     - copy_script:
         do:
           Integrations.demo.aos.sub_flows.remote_copy:
+            - hostname: '${hostname}'
+            - username: '${username}'
+            - password: '${password}'
             - url: '${script_url}'
         publish:
           - script_name: '${filename}'
@@ -54,6 +60,9 @@ flow:
     - delete_file:
         do:
           Integrations.demo.aos.tools.delete_file:
+            - hostname: '${hostname}'
+            - username: '${username}'
+            - password: '${password}'
             - filename: '${script_name}'
         navigate:
           - SUCCESS: has_failed

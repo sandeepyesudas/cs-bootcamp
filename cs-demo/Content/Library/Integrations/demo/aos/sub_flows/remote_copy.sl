@@ -35,6 +35,8 @@ flow:
             - destination_password:
                 value: '${password}'
                 sensitive: true
+        publish:
+          - return_result
         navigate:
           - SUCCESS: SUCCESS
           - FAILURE: on_failure
@@ -50,8 +52,8 @@ extensions:
         x: 444
         y: 243
       get_file:
-        x: 442
-        y: 402
+        x: 443
+        y: 401
       remote_secure_copy:
         x: 619
         y: 407
